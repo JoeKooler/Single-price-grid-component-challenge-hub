@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+$cyan: hsl(179, 62%, 43%);
+$lightCyan: hsl(179, 47%, 52%);
+$brightYellow: hsl(71, 73%, 54%);
+$lightGray: hsl(204, 43%, 93%);
+$grayishBlue: hsl(218, 22%, 67%);
+
+$fontSize: 16px;
+$primaryWeight: 700;
+$secondaryWeight: 400;
+$cardRoundness: 12px;
+$buttonRoundness: 4px;
+
+$blurOpacity: 0.8;
+
+$layoutSpacing: 40px;
+$primarySpacing: 25px;
+$secondarySpacing: 15px;
+
+$breakpoint-mobile: 375px;
+$mobile-padding: 25px;
+
+* {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: $fontSize;
+}
+
+h1 {
+  font-weight: $primaryWeight;
+}
+
+p {
+  font-weight: $secondaryWeight;
+}
+
+@mixin primaryText {
+  margin-bottom: $primarySpacing;
+}
+
+@mixin secondaryText {
+  margin-bottom: $secondarySpacing;
+}
+
+@mixin contentText {
+  margin-bottom: $secondarySpacing;
+}
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: $lightGray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: grid;
+  width: 640px;
+  height: 475px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "ads ads"
+    "content_1 content_2";
+  background-color: white;
+  border-radius: $cardRoundness;
+  overflow: hidden;
+  box-shadow: 0px 0px 8px 0px #00000047;
+
+  .top {
+    grid-area: ads;
+    padding: $layoutSpacing;
+
+    .primaryText {
+      @include primaryText();
+      color: $cyan;
+    }
+
+    .secondaryText {
+      @include secondaryText();
+      color: $brightYellow;
+    }
+
+    .contentText {
+      @include contentText();
+      color: $grayishBlue;
+    }
+  }
+
+  .bottomLeft {
+    grid-area: content_1;
+    padding: $layoutSpacing;
+    background-color: $cyan;
+
+    .primaryText {
+      @include primaryText();
+      color: $lightGray;
+    }
+
+    .price {
+      margin-bottom: $secondarySpacing;
+    }
+
+    .priceText {
+      font-size: 26px;
+      color: $lightGray;
+      display: inline;
+    }
+
+    .secondaryText {
+      color: $lightGray;
+      opacity: $blurOpacity;
+      display: inline;
+    }
+
+    .contentText {
+      @include contentText();
+      color: $lightGray;
+    }
+
+    .signUp {
+      width: 100%;
+      height: 48px;
+      border: none;
+      color: $lightGray;
+      background-color: $brightYellow;
+      border-radius: $buttonRoundness;
+      box-shadow: 0px 0px 8px 0px #00000047;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .bottomRight {
+    grid-area: content_2;
+    padding: $layoutSpacing;
+    background-color: $lightCyan;
+
+    .primaryText {
+      @include primaryText();
+      color: white;
+    }
+
+    .contentText {
+      @include contentText();
+      width: 180px;
+      color: $lightGray;
+      opacity: $blurOpacity;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .card {
+    display: grid;
+    width: 312px;
+    height: 720px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "ads"
+      "content_1"
+      "content_2";
+
+    background-color: white;
+    border-radius: $buttonRoundness;
+    overflow: hidden;
+    box-shadow: 0px 0px 8px 0px #00000047;
+
+    .top,
+    .bottomLeft,
+    .bottomRight {
+      width: 262px;
+      padding: $mobile-padding;
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10px;
+  color: $cyan;
+
+  a {
+    color: $cyan !important;
+  }
+}

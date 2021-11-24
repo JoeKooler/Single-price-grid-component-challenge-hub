@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+p {
+  font-weight: 400;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e5eff5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card {
+  display: -ms-grid;
+  display: grid;
+  width: 640px;
+  height: 475px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "ads ads" "content_1 content_2";
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 8px 0px #00000047;
+          box-shadow: 0px 0px 8px 0px #00000047;
+}
+
+.card .top {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: ads;
+  padding: 40px;
+}
+
+.card .top .primaryText {
+  margin-bottom: 25px;
+  color: #2ab2af;
+}
+
+.card .top .secondaryText {
+  margin-bottom: 15px;
+  color: #c0df34;
+}
+
+.card .top .contentText {
+  margin-bottom: 15px;
+  color: #98a6bd;
+}
+
+.card .bottomLeft {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: content_1;
+  padding: 40px;
+  background-color: #2ab2af;
+}
+
+.card .bottomLeft .primaryText {
+  margin-bottom: 25px;
+  color: #e5eff5;
+}
+
+.card .bottomLeft .price {
+  margin-bottom: 15px;
+}
+
+.card .bottomLeft .priceText {
+  font-size: 26px;
+  color: #e5eff5;
+  display: inline;
+}
+
+.card .bottomLeft .secondaryText {
+  color: #e5eff5;
+  opacity: 0.8;
+  display: inline;
+}
+
+.card .bottomLeft .contentText {
+  margin-bottom: 15px;
+  color: #e5eff5;
+}
+
+.card .bottomLeft .signUp {
+  width: 100%;
+  height: 48px;
+  border: none;
+  color: #e5eff5;
+  background-color: #c0df34;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 8px 0px #00000047;
+          box-shadow: 0px 0px 8px 0px #00000047;
+}
+
+.card .bottomLeft .signUp:hover {
+  cursor: pointer;
+}
+
+.card .bottomRight {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: content_2;
+  padding: 40px;
+  background-color: #4bbebc;
+}
+
+.card .bottomRight .primaryText {
+  margin-bottom: 25px;
+  color: white;
+}
+
+.card .bottomRight .contentText {
+  margin-bottom: 15px;
+  width: 180px;
+  color: #e5eff5;
+  opacity: 0.8;
+}
+
+@media (max-width: 375px) {
+  .card {
+    display: -ms-grid;
+    display: grid;
+    width: 312px;
+    height: 720px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "ads" "content_1" "content_2";
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 8px 0px #00000047;
+            box-shadow: 0px 0px 8px 0px #00000047;
+  }
+  .card .top,
+  .card .bottomLeft,
+  .card .bottomRight {
+    width: 262px;
+    padding: 25px;
+  }
+}
+
+footer {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 10px;
+  color: #2ab2af;
+}
+
+footer a {
+  color: #2ab2af !important;
+}
+/*# sourceMappingURL=index.css.map */
